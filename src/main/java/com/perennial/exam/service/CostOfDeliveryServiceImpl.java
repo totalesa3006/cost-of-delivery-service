@@ -3,8 +3,6 @@ package com.perennial.exam.service;
 import static com.perennial.exam.constant.CostOfDeliveryConstants.COST_OF_DELIVERY_RULES_MAP;
 import static com.perennial.exam.constant.CostOfDeliveryConstants.COST_OF_DELIVERY_RULES_PRIORITY_LIST;
 import static com.perennial.exam.constant.CostOfDeliveryConstants.COST_OF_DELIVERY_RULES_PRIORITY_MAP;
-import static com.perennial.exam.constant.CostOfDeliveryConstants.DECIOSN_REJECT;
-import static com.perennial.exam.constant.CostOfDeliveryConstants.REJECT_ERROR_MSG;
 import static com.perennial.exam.constant.ExceptionConstants.INVLAID_CODE;
 import static com.perennial.exam.constant.ExceptionConstants.INVLAID_VOUCHER_CODE;
 import static com.perennial.exam.constant.ExceptionConstants.VOUCHER_CODE_EXPIRED;
@@ -55,7 +53,7 @@ public class CostOfDeliveryServiceImpl implements CostOfDeliveryService {
   @Autowired
   @Qualifier(COST_OF_DELIVERY_RULES_PRIORITY_MAP)
   private ConcurrentHashMap<String, List<String>> costOfDeliveryRulesPriorityMap;
-  VoucherServiceFiegnClient voucherServiceFiegnClient;
+  private VoucherServiceFiegnClient voucherServiceFiegnClient;
 
   public CostOfDeliveryServiceImpl(VoucherServiceFiegnClient voucherServiceFiegnClient,
       CostOfDeliveryRepository costOfDeliveryRepository) {
@@ -66,7 +64,7 @@ public class CostOfDeliveryServiceImpl implements CostOfDeliveryService {
 
   private void populdateCostOfDeliveryRulesMap() {
 
-    if (costOfDeliveryRulesMap.isEmpty()) {
+    if (costOfDeliveryRulesMap.isEmpty() || costOfDeliveryRulesMap.size() ==0) {
       List<String> rulesPriorityList = new ArrayList<>();
       List<CostOfDelivery> costOfDeliveryList = costOfDeliveryRepository.findAllByOrderByPriorityAsc();
       for (CostOfDelivery costOfDelivery : costOfDeliveryList) {
@@ -145,4 +143,7 @@ public class CostOfDeliveryServiceImpl implements CostOfDeliveryService {
     return lVoucherExpiryDate.isBefore(lCurrentDate);
   }
 
+  public String getVoucherServiceAPIKey() {
+    return voucherServiceAPIKey;
+  }
 }

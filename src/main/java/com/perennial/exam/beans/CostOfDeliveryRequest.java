@@ -3,9 +3,11 @@ package com.perennial.exam.beans;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class CostOfDeliveryRequest {
   @NotNull(message = "Weight can not be null.")
   @DecimalMin(message = "Weight can not be less then 0.0001 KG" ,value="0.001")

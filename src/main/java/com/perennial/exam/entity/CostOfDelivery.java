@@ -10,7 +10,6 @@ import lombok.Data;
 @Entity
 @Table(name = "cost_of_delivery")
 public class CostOfDelivery {
-
   @Id
   private int priority;
   private String ruleName;
