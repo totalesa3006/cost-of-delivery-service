@@ -1,4 +1,4 @@
-package com.perennial.exam.constants;
+package com.perennial.exam.constant;
 
 public interface CostOfDeliveryTestConstants {
 

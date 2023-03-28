@@ -4,7 +4,6 @@ import com.perennial.exam.beans.BaseResponse;
 import com.perennial.exam.beans.CostOfDeliveryRequest;
 import com.perennial.exam.beans.CostOfDeliveryResponse;
 import com.perennial.exam.service.CostOfDeliveryService;
-import com.perennial.exam.service.ValidationService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,19 +25,16 @@ public class CostOfDeliveryController {
   private static final Logger logger = LoggerFactory.getLogger(CostOfDeliveryController.class);
 
   private CostOfDeliveryService costOfDeliveryService;
-  private ValidationService validationService;
 
-  public CostOfDeliveryController(CostOfDeliveryService costOfDeliveryService,
-      ValidationService validationService) {
+  public CostOfDeliveryController(CostOfDeliveryService costOfDeliveryService
+  ) {
     this.costOfDeliveryService = costOfDeliveryService;
-    this.validationService = validationService;
   }
 
   @PostMapping("/getCostOfDelivery")
   public ResponseEntity<BaseResponse> getCostOfDelivery(
       @RequestBody @Valid CostOfDeliveryRequest pCostOfDeliveryRequest) {
     logger.info("Start getCostOfDelivery method");
-    validationService.validateCostOfDeliveryRequest(pCostOfDeliveryRequest);
     CostOfDeliveryResponse costOfDeliveryResponse = costOfDeliveryService.getCostOfDelivery(
         pCostOfDeliveryRequest);
     return ResponseEntity.ok(costOfDeliveryResponse);

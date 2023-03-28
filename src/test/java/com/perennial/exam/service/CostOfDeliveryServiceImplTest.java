@@ -1,15 +1,15 @@
 package com.perennial.exam.service;
 
-import static com.perennial.exam.constants.CostOfDeliveryTestConstants.COST_OF_DELIVERY_RULES_MAP;
-import static com.perennial.exam.constants.CostOfDeliveryTestConstants.COST_OF_DELIVERY_RULES_PRIORITY_LIST;
-import static com.perennial.exam.constants.CostOfDeliveryTestConstants.COST_OF_DELIVERY_RULES_PRIORITY_MAP;
-import static com.perennial.exam.constants.CostOfDeliveryTestConstants.HEAVY_PARCEL;
-import static com.perennial.exam.constants.CostOfDeliveryTestConstants.LARGE_PARCEL;
-import static com.perennial.exam.constants.CostOfDeliveryTestConstants.MEDIUM_PARCEL;
-import static com.perennial.exam.constants.CostOfDeliveryTestConstants.REJECT;
-import static com.perennial.exam.constants.CostOfDeliveryTestConstants.SMALL_PARCEL;
-import static com.perennial.exam.constants.CostOfDeliveryTestConstants.VOLUME;
-import static com.perennial.exam.constants.CostOfDeliveryTestConstants.WEIGHT;
+import static com.perennial.exam.constant.CostOfDeliveryTestConstants.COST_OF_DELIVERY_RULES_MAP;
+import static com.perennial.exam.constant.CostOfDeliveryTestConstants.COST_OF_DELIVERY_RULES_PRIORITY_LIST;
+import static com.perennial.exam.constant.CostOfDeliveryTestConstants.COST_OF_DELIVERY_RULES_PRIORITY_MAP;
+import static com.perennial.exam.constant.CostOfDeliveryTestConstants.HEAVY_PARCEL;
+import static com.perennial.exam.constant.CostOfDeliveryTestConstants.LARGE_PARCEL;
+import static com.perennial.exam.constant.CostOfDeliveryTestConstants.MEDIUM_PARCEL;
+import static com.perennial.exam.constant.CostOfDeliveryTestConstants.REJECT;
+import static com.perennial.exam.constant.CostOfDeliveryTestConstants.SMALL_PARCEL;
+import static com.perennial.exam.constant.CostOfDeliveryTestConstants.VOLUME;
+import static com.perennial.exam.constant.CostOfDeliveryTestConstants.WEIGHT;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
